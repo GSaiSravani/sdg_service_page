@@ -1,24 +1,59 @@
-/* App.css */
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .app {
   font-family: 'Poppins', sans-serif;
   color: #24272C;
   background-color: #F2F2F2;
-  padding: 40px;
+  padding-top: 150px; /* Add padding-top to avoid overlap with the fixed hero section */
+  padding-bottom: 150px; /* Add padding-bottom to avoid overlap with the fixed footer section */
+  min-height: 100vh; /* Ensure minimum height to cover the viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-section {
   text-align: center;
   background: #3DB166;
   color: white;
-  padding: 50px 0;
+  padding: 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.footer-section {
+  text-align: center;
+  background: #192F59;
+  color: white;
+  padding: 8px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top */
 }
 
 .content {
   display: flex;
+  justify-content: space-between; /* Distribute space between sidebar and services */
+  flex: 1; /* Allow it to take available space */
+  width: 100%; /* Ensure full width */
+  padding: 0 20px; /* Optional padding for better alignment */
+}
 
+.services-section-container {
+  display: flex;
+  justify-content: center; /* Center the grid container */
+  flex: 3; /* Allow more space for the services section */
 }
 
 .services-section {
@@ -26,9 +61,8 @@
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 30px; /* Increase gap between grid items */
   padding: 50px; /* Padding around the grid */
-  margin-left: 1in; /* Start the grid 2 inches from the left */
+  width: fit-content; /* Fit the grid container to its content */
 }
-
 
 .service-box {
   background: rgba(255, 255, 255, 0.8);
@@ -57,7 +91,6 @@ p {
   margin-bottom: 15px; /* Increased bottom margin for paragraph */
 }
 
-
 .service-icon {
   font-size: 30px; /* Reduced icon size */
   color: #3DB166;
@@ -68,8 +101,9 @@ p {
   font-size: 16px; /* Reduced title font size */
   margin-bottom: 5px;
 }
+
 .sidebar {
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: 30px;
   flex: 1;
   display: flex;
@@ -77,19 +111,16 @@ p {
   background-color: hsl(0, 26%, 96%);
   border-radius: 15px;
   overflow: hidden;
-  height: 900px;
+  height: auto; /* Ensure auto height */
   width: 400px; /* Added width with px unit */
   padding: 20px; /* Optional padding for better alignment */
   box-sizing: border-box; /* Ensure padding and border are included in the width and height */
-  margin-right: 140px;
-  
 }
 
 .boxes-container {
   display: flex;
   flex-direction: column;
-  /* Gap between boxes */
- 
+  align-items: center; /* Center the boxes container horizontally */
 }
 
 .contact-box,
@@ -97,7 +128,6 @@ p {
 .benefits-box {
   background: white;
   padding: 10px;
-  margin-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +151,6 @@ p {
   font-size: 16px; /* Adjust icon size as needed */
 }
 
-
 .contact-box h4 {
   margin-bottom: -10px;
   font-size: 1.5rem;
@@ -131,19 +160,16 @@ p {
   margin-bottom: -10px;
   font-size: 1.5rem;
 }
+
 .brochure-box p {
   color: #666;
   margin-bottom: 0px;
 }
+
 .contact-box p {
   color: #666;
   margin-bottom: 0px;
 }
-
-/* .square-card {
-  width: 100%;
-  height: 45%;
-} */
 
 .btn {
   background: #3DB166;
@@ -160,20 +186,12 @@ p {
   margin: 0 auto; /* Center horizontally */
 }
 
-
 .btn i {
   margin-right: 8px;
 }
 
 .btn:hover {
   background: #192F59;
-}
-
-.footer-section {
-  text-align: center;
-  background: #192F59;
-  color: white;
-  padding: 50px 0;
 }
 
 h1, h2, h3, h4 {
@@ -192,7 +210,8 @@ li {
 li i {
   margin-right: 5px;
 }
-.btn1{
+
+.btn1 {
   background-color: #3DB166;
   padding: 7px;
   color: white;

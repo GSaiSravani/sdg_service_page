@@ -21,6 +21,7 @@ const App = () => {
       </header>
       <main>
         <div className="content">
+          <div className="services-section-container">
           <div className="services-section">
             {services.map((service, index) => (
               <div key={index} className="service-box">
@@ -28,9 +29,10 @@ const App = () => {
                 <h3>{service.title}</h3>
                 <p>Astonished set expression solicitude way admiration</p>
               </div>
+
             ))}
           </div>
-          
+          </div>
           <div className="sidebar">
             <div class="boxes-container">
               <div className="contact-box">
